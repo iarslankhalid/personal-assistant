@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "demo": {
+      "command": "python",
+      "args": ["mcp_servers/demo_server.py"],
+      "allowed_tools": ["current_time", "list_notes", "save_note"]
+    },
+    "tasks": {
+      "command": "python",
+      "args": ["mcp_servers/tasks_server.py"],
+      "allowed_tools": ["list_tasks", "add_task", "complete_task"]
+    },
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "@notionhq/notion-mcp-server@2.5.2"],
+      "env": { "NOTION_TOKEN": "${NOTION_TOKEN}" },
+      "allowed_tools": [
+        "API-post-search",
+        "API-retrieve-page-markdown",
+        "API-retrieve-a-page",
+        "API-retrieve-a-database",
+        "API-retrieve-a-data-source",
+        "API-query-data-source"
+      ]
+    }
+  }
+}
